@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                    <div class="m-4 m-lg-5">
+                        <h1 class="display-5 fw-bold">Vault Items</h1>
+                        <p class="fs-4">Following are all the items you have created.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        {% for vault_item in vault_items%}
+        <div class ="col mb-5">
+            <div class ="card h-100">
+                <div class="card-body p-4">
+                <div class="text-center">
+                    <h5 class-"fw-bolder">
+                        {{vaultitem.title}}
+                    </h5>
+                    {{vault_item.content}}
+                    {{vault_item.owner_reference_id}}
+                    {{vault_item.creation_timestamp}}
+
+  
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+{% endblock %}

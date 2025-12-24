@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Vault - List of all audit logs
+{% endblock %}
+
+
+{% block content %}
+
+    <p><a href="/">HOME</a></p>  
+
+    <h1>Audit Logs</h1>
+
+    <ul>
+        {% for x in my_audit_logs %}
+            <li><a href="details/{{ x.id }}">{{ x.timestamp }} {{x.access_outcome}} {{ x.src_metada }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
